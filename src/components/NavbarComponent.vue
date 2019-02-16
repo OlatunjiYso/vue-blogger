@@ -17,10 +17,11 @@ export default {
 
 <style> 
 #nav-component {
-  padding: 15px;
+  padding: 10px;
   display: flex;
   justify-content: flex-end;
   background-color: rgb(7, 14, 8);
+  height: 15%;
   color: #fff
 }
 

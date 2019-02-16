@@ -18,5 +18,9 @@ export const routes = [
   name: 'edit',
   path: '/edit/:id',
   component: EditComponent
-}
+},
+{ 
+  path: '*', 
+  redirect: '/posts' 
+},
 ]

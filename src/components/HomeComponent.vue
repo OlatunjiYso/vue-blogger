@@ -81,6 +81,7 @@ export default {};
   width: 25%;
   background-color: rgb(241, 250, 241);
   margin-right: 5%;
+  color: rgb(80, 80, 80);
 }
 .blogs-section {
   border: 1px solid rgb(221, 221, 221);
@@ -98,11 +99,14 @@ export default {};
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto
 }
 .header {
   text-align: center;
   padding: 20px;
   background-color: rgb(252, 243, 231);
+  color: rgb(32, 29, 24);
 }
 
 .post-list-item {
@@ -116,9 +120,8 @@ export default {};
   margin: 4px 2px 30px 2px;
   list-style-type: none;
   padding: 5px 5px;
-  border: 1px solid black;
+  border: 1px solid rgb(149, 155, 149);
   border-radius: 4px;
-  color: rgb(7, 14, 8);
 }
 
 .post-card {

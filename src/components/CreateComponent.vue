@@ -1,27 +1,54 @@
 <template>
   <div id="create-component">
-    <label class="title">What is the title of your post</label>
-    <input id="title-input" type="text">
-    <label class="body">Enter your post here</label>
-    <input id="body-input" type="text">
+    <h1 id="main-header"> Create a post</h1>
+    <div class="field-pack">
+    <label class="title">Title: </label>
+    <input id="title-input" v-model="post.title" type="text" />
+    </div>
+    <div class="field-pack">
+    <label class="body">Enter your post here: </label>
+    <textarea maxlength= "2000" id="post-body-input" type="text" v-model="post.body"> </textarea>
+    </div>
+
     <div class="form-controls">
-      <button class="form-button-save">Save</button>
-      <button class="form-button-cancel">Cancel</button>
+      <button class="form-button-save" v-on:click="addPost">Save</button>
+      <button class="form-button-cancel" v-on:click="clearPost">Cancel</button>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      post: {}
+    }
+  },
+  methods: {
+    addPost(){
+      console.log(this.post.title, this.post.body)
+    },
+    clearPost(){
+      this.post.title= "";
+      this.post.body= "";
+    }
+  }
+};
 </script>
 
 <style>
 #create-component {
   width: 80%;
-  margin: 100px auto;
+  margin: 40px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.field-pack {
+  display:flex;
+  width: 60%;
+  flex-direction:column
 }
 
 .title {
@@ -37,17 +64,23 @@ export default {};
 }
 
 #title-input {
-  width: 80%;
-  height: 60px;
+  height: 20px;
   border: 1px solid rgb(129, 129, 129);
   margin-bottom: 20px;
+  font-size: 26px;
+  color:rgb(64, 77, 64);
+  padding: 20px;
+  text-align: center;
+  font-family: "palatino"
 }
 
-#body-input {
-  width: 80%;
+#post-body-input {
   height: 300px;
-  border: 1px solid rgb(129, 129, 129);
+  border: 1px solid rgb(138, 139, 137);
   margin-bottom: 20px;
+  font-size: 16px;
+  color:rgb(45, 46, 45);
+  padding: 20px;
 }
 .form-button-save {
   padding:10px 34px;
@@ -61,5 +94,8 @@ export default {};
   margin: 10px 30px;
   background-color: rgb(248, 237, 240);
   font-size: 16px
+}
+#main-header {
+  color:rgb(66, 75, 66)
 }
 </style>
