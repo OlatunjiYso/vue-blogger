@@ -9,6 +9,12 @@ let Post = new Schema({
   },
   body: {
     type: String
+  },
+  category: {
+    type: String
+  },
+  tags: {
+    type: String
   }
 }, {
   collection: 'posts'

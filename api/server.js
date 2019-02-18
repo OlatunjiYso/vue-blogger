@@ -10,8 +10,8 @@ import {postRoute} from './routes/post_route';
 
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.DB, {useNewUrlParser: true}).then(
-  () => {console.log('Database is connected')},
-  err => { console.log('Can not connect to the database' + err)}
+  () => { console.log('Database is connected') },
+  err => { console.log('Can not connect to the database' + err) }
 );
 
 

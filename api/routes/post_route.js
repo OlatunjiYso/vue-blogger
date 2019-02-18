@@ -14,8 +14,8 @@ postRoute.route('/add')
       check('body')
         .isLength({ min: 20 })
         .withMessage('blog body cannot be less than 20 characters')
-    ]
-    , (req, res) => {
+    ],
+     (req, res) => {
       var errors = validationResult(req);
       if (!errors.isEmpty()) {
         res.status(400).json({ err: errors.array()[0].msg});
