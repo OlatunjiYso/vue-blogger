@@ -68,7 +68,7 @@ static getABlogPost(req, res) {
   }
 
 /**
- * 
+ *  A method update blogposts
  * @param {object} req request object from client
  * @param {*} res response object from server
  * 
@@ -83,7 +83,7 @@ static updateBlogPost(req, res) {
       if (!blogPost) {
         res.status(404).json({msg: 'blogPost not found'});
       }
-      BlogPosts.update({ _id: mongoose.Types.ObjectId(id) },req.body)
+      BlogPost.updateOne({ _id: mongoose.Types.ObjectId(id) },req.body)
       .then((success)=> {
         res.status(200).json({
           msg: 'blogpost updated!',
@@ -96,7 +96,6 @@ static updateBlogPost(req, res) {
           err
         });
       })
-     
     }
   })
 }
