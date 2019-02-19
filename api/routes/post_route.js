@@ -1,6 +1,7 @@
 import express from 'express';
-import { postModel } from '../models/post.model';
+import { postModel } from '../models/blogPost.model';
 import { check, validationResult } from 'express-validator/check';
+import BlogPosts from '../controllers/blogposts';
 export const postRoute = express.Router();
 
 // Route and controller for saving a post.
@@ -19,15 +20,6 @@ postRoute.route('/add')
       var errors = validationResult(req);
       if (!errors.isEmpty()) {
         res.status(400).json({ err: errors.array()[0].msg});
-      } else {
-        let newPost = new postModel(req.body);
-        newPost.save()
-          .then(() => {
-            res.status(200).json({ msg: 'post added successfully' })
-          })
-          .catch(() => {
-            res.status(400).json({ err: 'unable to save to database' })
-          })
       }
     })
 
@@ -58,11 +50,14 @@ postRoute.route('/details/:id')
 postRoute.route('/update/:id')
   .post((req, res) => {
     let id = req.params.id;
-    postModel.findById(id, (err, post) => {
+    postModel.findById(id, (err, blogPost) => {
       if (err) {
-        res.status.json({ msg: 'post doesnt exist' })
+        res.status(503).json({ msg: 'internal server error' })
       }
       else {
+        if(!blogPost) {
+          res.status(404).json({msg: 'blogPost not found'});
+        }
         post.title = req.body.title;
         post.body = req.body.body;
         post.save().then(() => {
