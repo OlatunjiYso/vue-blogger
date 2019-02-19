@@ -101,14 +101,17 @@ static updateBlogPost(req, res) {
   })
 }
 
+/**
+ * A method to delete a blogpost
+ * @param {object} req  - request object from the client
+ * @param {*} res  response object from the server
+ */
 static deletePost(req, res) {
   BlogPost.findByIdAndRemove({ _id: req.params.id }, (err) => {
     if (err) res.json(err);
-    else res.status(200).json('post successfully removed');
+    else res.status(200).json({msg: 'post successfully removed'});
   });
 }
-
-
 
 }
 
