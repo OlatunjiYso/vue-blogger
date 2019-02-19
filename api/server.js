@@ -6,7 +6,7 @@ import expressValidator from 'express-validator';
 
 import dbConfig from './DB';
 import mongoose from 'mongoose';
-import {postRoute} from './routes/post_route';
+import blogsRoute from './routes/blogsroute';
 
 mongoose.Promise = global.Promise;
 mongoose.connect(dbConfig.DB, {useNewUrlParser: true}).then(
@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 //Use express validator
 app.use(expressValidator());
 
-app.use('/posts', postRoute);
+app.use('/posts', blogsRoute);
 
 app.listen(PORT, ()=>{
   console.log('Backend server running on port:', PORT)

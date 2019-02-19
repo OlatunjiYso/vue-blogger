@@ -20,4 +20,6 @@ let Post = new Schema({
   collection: 'posts'
 })
 
-export const postModel = mongoose.model('Post', Post)
+ const postModel = mongoose.model('Post', Post);
+
+ export default postModel;
