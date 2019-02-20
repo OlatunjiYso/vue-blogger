@@ -36,7 +36,7 @@ class BlogPosts {
   static getAllBlogPosts(req, res) {
     BlogPost.find((err, blogPosts)=> {
       if(err) {
-        res.status(501).json({msg: 'internal server error'})
+        res.status(501).json({msg: 'no blogpost added yet'})
       } else {
         res.status(200).json({ 
           msg: 'blog posts successfully found',
@@ -78,16 +78,14 @@ static updateBlogPost(req, res) {
   let id = req.params.id;
   BlogPost.findById(id, (err, blogPost)=> {
     if(err) {
-      res.status(501).json({msg: 'internal server error'});
+      res.status(501).json({msg: 'blogPost not found'});
     } else {
-      if (!blogPost) {
-        res.status(404).json({msg: 'blogPost not found'});
-      }
       BlogPost.updateOne({ _id: mongoose.Types.ObjectId(id) },req.body)
       .then((success)=> {
         res.status(200).json({
           msg: 'blogpost updated!',
-          mongooseMsg: success
+          mongooseMsg: success,
+          blogPost
         });
       })
       .catch((err)=> {
@@ -106,10 +104,17 @@ static updateBlogPost(req, res) {
  * @param {*} res  response object from the server
  */
 static deletePost(req, res) {
-  BlogPost.findByIdAndRemove({ _id: req.params.id }, (err) => {
-    if (err) res.json(err);
-    else res.status(200).json({msg: 'post successfully removed'});
-  });
+  let id = req.params.id;
+  BlogPost.findById(id, (err, blogPost)=> {
+    if(err) {
+      res.status(501).json({msg: 'no blogpost found'})
+    } else {
+      BlogPost.findByIdAndRemove({ _id: id }, (err) => {
+        if (err) res.json(err);
+        else res.status(200).json({msg: 'post successfully removed'});
+      })
+    }
+  })
 }
 
 }
