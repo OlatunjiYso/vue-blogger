@@ -1,29 +1,42 @@
 # vue-blogger
+### About Vue blogger
+Vue blogger is a full stack application for:
+- Creating blogposts
+- Editing existing blogposts
+- Viewing all blogposts
+- View a particular blogpost
+- Deleting a blogpost.
 
-## Project setup
+### Tech stack 
+- Node
+- Express
+- Mongodb
+- Vue.
+
+#### Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+#### To start the client side, 
 ```
+get on the root directory and
 npm run serve
 ```
 
-### Compiles and minifies for production
+#### To start the server side server, 
 ```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
+from the root directory, cd into `api`
+npm run start
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+#### Coming soon
+- Continuous integration
+- Unit tests
+- End to end testing
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Contributing ?
+Please do!!
+Fork the repo, 
+Raise ur PR. .
+
