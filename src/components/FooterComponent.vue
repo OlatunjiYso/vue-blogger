@@ -34,19 +34,19 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 #footer-component {
   display: flex;
   justify-content: flex-start;
-  background-color: rgb(7, 14, 8);
-  height: 25%;
-  color: rgb(189, 194, 190);
+  background-color: rgb(46, 7, 78) !important;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', sans-serif;
+  color: rgb(196, 195, 195);
 }
 
 h5 {
   padding: 2px 10px;
   background-color: rgb(197, 196, 196);
-  color: rgb(7, 14, 8);
+  color: rgb(37, 11, 71);
   margin: 10px 40px;
 }
 li {
@@ -57,4 +57,3 @@ li {
   margin-right: 30%;
 }
 </style>
-

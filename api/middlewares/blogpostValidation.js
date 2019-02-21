@@ -5,13 +5,13 @@ const blogValidationRules = {
 
   create: [
     check('title')
-      .isLength({ min: 10 })
+      .isLength({ min: 2 })
       .withMessage('Must be at least 10 chars long'),
     
     check('category'),
 
     check('body')
-    .isLength({ min: 1000 })
+    .isLength({ min: 100 })
     .withMessage('Must be at least 1000 chars long')
   ]
 }

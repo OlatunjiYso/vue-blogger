@@ -80,7 +80,7 @@ static updateBlogPost(req, res) {
     if(err) {
       res.status(501).json({msg: 'blogPost not found'});
     } else {
-      BlogPost.updateOne({ _id: mongoose.Types.ObjectId(id) },req.body)
+      BlogPost.update({ _id: mongoose.Types.ObjectId(id) },req.body)
       .then((success)=> {
         res.status(200).json({
           msg: 'blogpost updated!',
