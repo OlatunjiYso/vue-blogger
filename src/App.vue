@@ -8,12 +8,10 @@
 
 <script>
 import Navbar from './components/NavbarComponent.vue'
-import Footer from './components/FooterComponent.vue'
 
 export default {
   components: {
     navbar: Navbar,
-    'app-footer': Footer,
   },
   name: 'app'
 }
