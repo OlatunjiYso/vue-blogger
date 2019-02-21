@@ -1,12 +1,11 @@
 <template>
   <div id="nav-component">
-      <h5> Home </h5>
-
-       <h5> Posts </h5>
-
-      <h5> About </h5>
-
-      <h5> You </h5>
+    <ul>
+      <li class="nav-item"> <router-link to="/blogposts" > Home </router-link></li>
+       <li class="nav-item"> <router-link to="/create" > Add Post </router-link> </li>
+       <li class="nav-item"> <router-link to="/blogposts" > About </router-link></li>
+       <li class="nav-item"> <router-link to="/create"> New </router-link></li>
+    </ul>
   </div>
 </template>
 
@@ -15,21 +14,20 @@ export default {
 }
 </script>
 
-<style> 
+<style scoped> 
 #nav-component {
-  padding: 10px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', sans-serif;
+  padding: 2rem;
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
-  background-color: rgb(7, 14, 8);
+  background-color:  rgb(243, 223, 252);
   height: 15%;
-  color: #fff
 }
 
-h5 {
-  padding: 2px 10px;
-  background-color: rgb(197, 196, 196);
-  color: rgb(7, 14, 8);
-  margin: 10px 40px
-
+.nav-item {
+  margin:1rem 3rem;
+  display: inline;
 }
+
 </style>
