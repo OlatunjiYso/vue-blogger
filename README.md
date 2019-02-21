@@ -21,13 +21,15 @@ npm install
 #### To start the client side, 
 ```
 get on the root directory and
-npm run serve
+do npm install
+do npm run serve
 ```
 
 #### To start the server side server, 
 ```
 from the root directory, cd into `api`
-npm run start
+do npm install
+do npm run start
 ```
 
 #### Coming soon
@@ -36,7 +38,7 @@ npm run start
 - End to end testing
 
 #### Contributing ?
-Please do!!
+Please do 🤓
 Fork the repo, 
 Raise ur PR. .
 
