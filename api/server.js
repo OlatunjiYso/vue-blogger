@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 //Use express validator
 app.use(expressValidator());
 
-app.use('/posts', blogsRoute);
+app.use('/blogposts', blogsRoute);
 
 app.listen(PORT, ()=>{
   console.log('Backend server running on port:', PORT)
